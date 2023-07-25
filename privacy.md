@@ -1,3 +1,9 @@
+---
+layout: page
+title: Privacy policy
+permalink: /privacy/
+---
+
 # Privacy Policy for https://nseba.github.io
 
 At https://nseba.github.io, we are committed to safeguarding the privacy of our website visitors. This Privacy Policy outlines how we collect, use, and protect your personal information, specifically regarding Google Analytics and Google AdSense.
