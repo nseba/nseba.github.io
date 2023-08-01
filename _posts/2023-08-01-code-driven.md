@@ -8,6 +8,8 @@ title: "Building Distributed Architectures: The Code-Driven Approach"
 
 Greetings, fellow developers and tech enthusiasts! Today, I want to share with you a valuable approach that has been the backbone of our development process, helping us build remarkable and large-scale products with minimal effort. Welcome to the world of code-driven distributed architectures!
 
+![_config.yml]({{ site.baseurl }}/images/2023-08-01/code.jpg)
+
 ## The Power of Automation
 
 Throughout my professional journey, I've been fortunate to work with fantastic small teams on ambitious projects. To achieve our goals efficiently, we knew automation was the key. And when it comes to distributed architectures, the complexity demands an even greater emphasis on streamlining the development process.
