@@ -14,7 +14,7 @@ Greetings, fellow developers and tech enthusiasts! Today, I want to share with y
 
 Throughout my professional journey, I've been fortunate to work with fantastic small teams on ambitious projects. To achieve our goals efficiently, we knew automation was the key. And when it comes to distributed architectures, the complexity demands an even greater emphasis on streamlining the development process.
 
-In this blog post, I'll delve into our winning strategy, using standard tools that empower us to automate and orchestrate with ease.
+In this blog post, I'll delve into our strategy, using standard tools that empower us to automate and orchestrate with ease.
 
 ### Environments: The Crucial Building Blocks
 
@@ -37,6 +37,21 @@ We equip ourselves with a powerful tech stack that ensures full control, automat
 3. **[HashiCorp Terraform](https://www.terraform.io/)**: Terraform empowers us to describe cloud infrastructure in a declarative, coded manner. Its flexibility allows different approaches for various target platforms. We use Terraform for setting up infrastructure, be it DNS, managed services or Kubernetes. Additionally, we use Terraform to provision Kubernetes services based on 3rd party Helm charts, along with Kubernetes resources that are not part of any chart (secrets, config maps).
 
 4. **[Helm](https://helm.sh/)**: Helm is our trusty companion for service deployments. Helm charts enable atomic state management, making it easy to apply changes to services as a whole. Rollbacks to previous versions become effortless, saving us from sleepless nights during troubleshooting. In the dev environment, in some scnearios we must manually make changes using kubectl or k9s. Once validated, the changes are incorporated into the corresponding chart.
+
+## Keeping things together
+
+In order to achieve maximum flexibility and reusability, the entire infrastructure is set up based on Terraform. The approach to this is similar as any other programming approach, with an accent on modularity and reusability.
+
+Each environment that we manage is set up as an independent module, with other modules providing reusable building blocks. Having the environments as separate modules allows us to tweak the installation and alter it based on the specifics. For example, environments can be identical (of course with independent DNS records and services), or they can be customized with specific services (for example enterprise-dedicated clusters can be set-up with customer-specific integration services). 
+
+Although the environments are described individually, the building blocks of the environments are also available as modules, so that it is an easy job to reuse the configurations and apply changes globally, if needed.
+
+Below is a high-level diagram of such an environment module structure:
+
+![_config.yml]({{ site.baseurl }}/images/2023-08-01/terraform-structure.jpg)
+
+As mentioned previously, we backup all secrets into a secured Azure Key Vault, while everything else is set up in the terraform files and modules. Since our main runtime platform is Kubernetes, any 3rd party chart that is required by our product is also installed through the Terraform helm provider. Also, global secrets and config maps are also created through Terraform. This allows us to generate secrets on the first deployment and then use them, without human intervention (which reduces the exposed security surface).
+
 
 ## Conclusion: Unleashing the Full Potential
 
