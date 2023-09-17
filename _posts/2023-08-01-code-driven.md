@@ -10,6 +10,10 @@ Greetings, fellow developers and tech enthusiasts! Today, I want to share with y
 
 ![_config.yml]({{ site.baseurl }}/images/2023-08-01/code.jpg)
 
+> Before going further, this article is part of a series covering how to build an effective distributed architecture. If you haven't already, I recommend reading the previous articles to get up to speed:
+> 1. [Building Distributed Architectures: Creating a Blueprint for Success](/building-distributed-architectures-creating-a-blueprint-for-success/)
+> 2. [Goals](/goals/)
+
 ## The Power of Automation
 
 Throughout my professional journey, I've been fortunate to work with fantastic small teams on ambitious projects. To achieve our goals efficiently, we knew automation was the key. And when it comes to distributed architectures, the complexity demands an even greater emphasis on streamlining the development process.
